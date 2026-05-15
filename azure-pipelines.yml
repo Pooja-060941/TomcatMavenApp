@@ -1,8 +1,8 @@
 trigger:
-- main
+- master
+
 pool:
-  name: Azure Pipelines
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo "Build Pipeline Successful"
-  displayName: 'Run Build'
+- bash: echo "Hello Azure DevOps"
