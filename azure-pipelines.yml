@@ -5,9 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- bash: echo "New Azure DevOps Pipeline Created Successfully"
-
-- bash: |
-    echo "Pipeline Triggered from GitHub Changes"
+- script: |
+    echo "Hello Azure DevOps"
+    echo "Pipeline Trigger Successful"
     date
-  displayName: 'Run Build'
+  displayName: 'Run Demo Script'
