@@ -5,12 +5,21 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: |
-    echo "Build Stage Started"
-    echo "Application Build Successful"
-  displayName: 'Build Stage'
 
 - script: |
-    echo "Release Stage Started"
-    echo "Application Deployment Successful"
-  displayName: 'Release Stage'
+    echo "Building Application..."
+    mkdir build
+    echo "Sample App Files" > build/app.txt
+  displayName: 'Build Application'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'build'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifact'
+
+- script: |
+    echo "Deploying Application..."
+    echo "Deployment Successful"
+  displayName: 'Release Deployment'
