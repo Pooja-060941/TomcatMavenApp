@@ -1,0 +1,16 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    echo "Build Stage Started"
+    echo "Application Build Successful"
+  displayName: 'Build Stage'
+
+- script: |
+    echo "Release Stage Started"
+    echo "Application Deployment Successful"
+  displayName: 'Release Stage'
